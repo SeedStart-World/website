@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SeedStart - Turn Your Ideas into Reality</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "seed-primary": "#3f51b5",
+              "seed-accent": "#ff4081",
+              "seed-dark": "#1a1a2e",
+              "seed-light": "#f5f5f5",
+              "seed-green": "#4caf50",
+              "seed-blue": "#2196f3",
+            },
+            animation: {
+              float: "float 6s ease-in-out infinite",
+              "pulse-slow": "pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+              "slide-up": "slideUp 0.8s ease-out",
+              "fade-in": "fadeIn 0.6s ease-in",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+      }
+      @keyframes slideUp {
+        from {
+          transform: translateY(30px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      .hero-gradient {
+        background: linear-gradient(135deg, #3f51b5 0%, #2196f3 100%);
+      }
+      .feature-card:hover {
+        transform: translateY(-10px);
+        transition: all 0.3s ease;
+      }
+      .testimonial-card {
+        backdrop-filter: blur(12px);
+        background: rgba(255, 255, 255, 0.15);
+      }
+      #scroll-up-btn {
+        position: fixed;
+        bottom: 40px;
+        right: 40px;
+        background-color: #3f51b5;
+        color: white;
+        padding: 12px 16px;
+        border-radius: 50%;
+        cursor: pointer;
+        display: none;
+        z-index: 999;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease;
+      }
+      #scroll-up-btn:hover {
+        transform: translateY(-4px) scale(1.1);
+        background-color: #2196f3;
+      }
+    </style>
+  </head>
+  <body class="font-sans bg-seed-light relative">
+    <!-- Scroll Up Button -->
+    <div id="scroll-up-btn">⬆️</div>
+
+    <!-- Navigation -->
+    <nav
+      class="fixed w-full bg-white/95 backdrop-blur-sm shadow-md z-50 transition-all duration-300"
+      id="navbar"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center py-4">
+          <!-- Logo -->
+          <div class="flex items-center space-x-2">
+            <div
+              class="w-10 h-10 bg-gradient-to-r from-seed-primary to-seed-accent rounded-lg flex items-center justify-center"
+            >
+              <span class="text-white font-bold text-lg">🌱</span>
+            </div>
+            <span class="font-bold text-xl text-seed-dark"
+              >SeedStart.World</span
+            >
+          </div>
+
+          <!-- Desktop Menu -->
+          <div class="hidden md:flex space-x-8 text-seed-dark">
+            <a href="#about" class="hover:text-seed-primary transition-colors"
+              >About</a
+            >
+            <a
+              href="#features"
+              class="hover:text-seed-primary transition-colors"
+              >Features</a
+            >
+            <a
+              href="#how-it-works"
+              class="hover:text-seed-primary transition-colors"
+              >How It Works</a
+            >
+            <a
+              href="#testimonials"
+              class="hover:text-seed-primary transition-colors"
+              >Testimonials</a
+            >
+          </div>
+
+          <!-- Desktop Buttons -->
+          <div class="hidden md:flex space-x-4">
+            <a
+              href="https://app.seedstart.world/"
+              class="px-4 py-2 text-seed-primary hover:bg-seed-primary/10 rounded-lg transition-colors"
+              >Sign In</a
+            >
+            <a
+              href="https://app.seedstart.world/"
+              class="px-6 py-2 bg-seed-primary text-white rounded-lg hover:bg-seed-primary/90 transition-all transform hover:scale-105"
+              >Start Free</a
+            >
+          </div>
+
+          <!-- Mobile Hamburger -->
+          <div class="md:hidden flex items-center">
+            <button id="mobile-menu-button" class="focus:outline-none">
+              <svg
+                class="w-6 h-6 text-seed-dark"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden md:hidden px-4 pb-4 space-y-2">
+        <a
+          href="#about"
+          class="block text-seed-dark hover:text-seed-primary transition-colors"
+          >About</a
+        >
+        <a
+          href="#features"
+          class="block text-seed-dark hover:text-seed-primary transition-colors"
+          >Features</a
+        >
+        <a
+          href="#how-it-works"
+          class="block text-seed-dark hover:text-seed-primary transition-colors"
+          >How It Works</a
+        >
+        <a
+          href="#testimonials"
+          class="block text-seed-dark hover:text-seed-primary transition-colors"
+          >Testimonials</a
+        >
+        <div class="flex flex-col space-y-2 mt-2">
+          <a
+            href="https://app.seedstart.world/"
+            class="w-full text-center px-4 py-2 text-seed-primary hover:bg-seed-primary/10 rounded-lg transition-colors"
+            >Sign In</a
+          >
+          <a
+            href="https://app.seedstart.world/"
+            class="w-full text-center px-4 py-2 bg-seed-primary text-white rounded-lg hover:bg-seed-primary/90 transition-all transform hover:scale-105"
+            >Start Free</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+      class="min-h-screen flex items-center relative overflow-hidden"
+      style="
+        background-image: url('https://images.unsplash.com/photo-1734794049686-38f3e8df8b98?w=600&auto=format&fit=crop&q=60');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+      "
+    >
+      <div
+        class="absolute inset-0 bg-gradient-to-r from-seed-primary/80 via-seed-blue/70 to-seed-green/80"
+      ></div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-4 lg:px-8 relative z-10">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div class="text-white animate-slide-up text-center lg:text-left">
+            <h1 class="text-5xl lg:text-7xl font-bold mb-6 leading-tight">
+              Turn Your Ideas<br />
+              <span
+                class="text-transparent bg-clip-text bg-gradient-to-r from-seed-green to-seed-blue"
+                >Into Reality</span
+              >
+            </h1>
+            <p class="text-xl lg:text-2xl mb-8 text-gray-200">
+              Join thousands of entrepreneurs shaping the future. Access
+              powerful tools, connect with visionary teams, and scale your
+              startup with confidence.
+            </p>
+            <p class="text-lg mb-8 text-green-300 italic">
+              "Where Ideas Grow Into Startups."
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a
+                href="https://app.seedstart.world/"
+                class="px-8 py-4 bg-white text-gray-900 rounded-xl font-semibold hover:bg-gray-100 transition-all transform hover:scale-105 shadow-lg"
+                >Start Free Today</a
+              >
+              <a
+                href="https://www.linkedin.com/company/seedstart-world/"
+                class="px-8 py-4 border-2 border-white text-white rounded-xl font-semibold hover:bg-white hover:text-gray-900 transition-all"
+                >Join the Community</a
+              >
+            </div>
+          </div>
+          <div class="lg:flex justify-center hidden">
+            <div class="relative">
+              <div
+                class="w-96 h-96 bg-gradient-to-r from-seed-green to-seed-blue rounded-full animate-pulse-slow opacity-20"
+              ></div>
+              <div class="absolute inset-0 flex items-center justify-center">
+                <img
+                  src="https://images.unsplash.com/photo-1695067058684-da5a90013c57?w=600&auto=format&fit=crop&q=60"
+                  alt="Entrepreneur shaping the future"
+                  class="w-80 h-80 object-cover rounded-full shadow-xl border-4 border-white"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16 animate-fade-in">
+          <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+            Everything You Need to Succeed
+          </h2>
+          <p class="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+            At SeedSite, we believe every great company begins with a spark of
+            inspiration. Our platform is designed to transform your vision into
+            a thriving business by combining
+            <span class="text-seed-green font-semibold"
+              >innovation, collaboration, and growth</span
+            >
+            in one place.
+          </p>
+        </div>
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div class="space-y-6">
+            <p class="text-lg text-gray-700 leading-relaxed">
+              Whether you're just starting out or looking to scale, SeedSite
+              provides the
+              <span class="font-semibold text-seed-green"
+                >resources, community, and expert guidance</span
+              >
+              you need at every stage of your journey.
+            </p>
+            <div class="grid grid-cols-3 gap-6 text-center">
+              <div class="p-4">
+                <div class="text-3xl font-bold text-seed-green">100+</div>
+                <div class="text-gray-600">Active Startups</div>
+              </div>
+              <div class="p-4">
+                <div class="text-3xl font-bold text-seed-green">50+</div>
+                <div class="text-gray-600">Funding Raised</div>
+              </div>
+              <div class="p-4">
+                <div class="text-3xl font-bold text-seed-green">95%</div>
+                <div class="text-gray-600">Success Rate</div>
+              </div>
+            </div>
+          </div>
+          <div class="relative">
+            <div
+              class="bg-gradient-to-r from-green-400 to-blue-500 rounded-2xl p-8 text-white"
+            >
+              <h3 class="text-2xl font-bold mb-4">Start Your Journey</h3>
+              <p class="mb-6">
+                Ready to transform your idea into the next big thing?
+              </p>
+              <a
+                href="https://app.seedstart.world/"
+                class="bg-white text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-all"
+              >
+                Get Started Now
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+            Why Choose SeedSite?
+          </h2>
+          <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+            Everything you need to turn your vision into a thriving business
+          </p>
+        </div>
+        <div
+          class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 test"
+          style="text-align: -webkit-center"
+        >
+          <div
+            class="feature-card bg-gradient-to-br from-purple-50 to-blue-50 p-8 rounded-2xl shadow-sm hover:shadow-lg transition-all"
+          >
+            <div class="text-4xl mb-4">💡</div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">
+              Innovative Ideas
+            </h3>
+            <p class="text-gray-600">
+              Take your concepts from idea to market with our comprehensive
+              startup ecosystem.
+            </p>
+          </div>
+          <div
+            class="feature-card bg-gradient-to-br from-green-50 to-teal-50 p-8 rounded-2xl shadow-sm hover:shadow-lg transition-all"
+          >
+            <div class="text-4xl mb-4">👥</div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Team Building</h3>
+            <p class="text-gray-600">
+              Connect with like-minded entrepreneurs and build your dream team.
+            </p>
+          </div>
+          <div
+            class="feature-card bg-gradient-to-br from-orange-50 to-red-50 p-8 rounded-2xl shadow-sm hover:shadow-lg transition-all"
+          >
+            <div class="text-4xl mb-4">📈</div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Growth Focus</h3>
+            <p class="text-gray-600">
+              Use proven strategies and resources to accelerate your growth.
+            </p>
+          </div>
+          <div
+            class="feature-card bg-gradient-to-br from-gray-50 to-slate-50 p-8 rounded-2xl shadow-sm hover:shadow-lg transition-all"
+          >
+            <div class="text-4xl mb-4">🔒</div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">
+              Secure Platform
+            </h3>
+            <p class="text-gray-600">
+              Enterprise-grade security to protect your data and ideas.
+            </p>
+          </div>
+          <div
+            class="feature-card bg-gradient-to-br from-yellow-50 to-orange-50 p-8 rounded-2xl shadow-sm hover:shadow-lg transition-all"
+          >
+            <div class="text-4xl mb-4">⚡</div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Fast Execution</h3>
+            <p class="text-gray-600">
+              Streamlined workflows to get your startup off the ground quickly.
+            </p>
+          </div>
+          <div
+            class="feature-card bg-gradient-to-br from-indigo-50 to-purple-50 p-8 rounded-2xl shadow-sm hover:shadow-lg transition-all"
+          >
+            <div class="text-4xl mb-4">🎓</div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">
+              Expert Guidance
+            </h3>
+            <p class="text-gray-600">
+              Learn from mentors, investors, and industry experts.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-20 bg-gray-900 text-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl lg:text-5xl font-bold mb-6">How It Works</h2>
+          <p class="text-xl text-gray-300 max-w-2xl mx-auto">
+            We simplify the startup journey with an intuitive, three-step
+            process
+          </p>
+        </div>
+        <div class="grid lg:grid-cols-3 gap-8">
+          <div class="text-center group">
+            <div
+              class="bg-gradient-to-r from-green-400 to-blue-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold group-hover:scale-110 transition-transform"
+            >
+              1
+            </div>
+            <h3 class="text-2xl font-bold mb-4">Create Your Startup</h3>
+            <p class="text-gray-300 text-lg">
+              Share your vision, validate your idea, and access essential tools.
+            </p>
+          </div>
+          <div class="text-center group">
+            <div
+              class="bg-gradient-to-r from-purple-400 to-pink-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold group-hover:scale-110 transition-transform"
+            >
+              2
+            </div>
+            <h3 class="text-2xl font-bold mb-4">Build Your Team</h3>
+            <p class="text-gray-300 text-lg">
+              Match with co-founders, advisors, and collaborators who believe in
+              your mission.
+            </p>
+          </div>
+          <div class="text-center group">
+            <div
+              class="bg-gradient-to-r from-orange-400 to-red-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold group-hover:scale-110 transition-transform"
+            >
+              3
+            </div>
+            <h3 class="text-2xl font-bold mb-4">Launch with Confidence</h3>
+            <p class="text-gray-300 text-lg">
+              Use our resources and mentorship to bring your product to market.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Who Is This For Section -->
+    <section class="py-20 bg-gradient-to-r from-purple-600 to-blue-600">
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white"
+      >
+        <h2 class="text-4xl lg:text-5xl font-bold mb-8">Who Is This For?</h2>
+        <p class="text-xl mb-12 max-w-3xl mx-auto">
+          SeedSite is built for
+          <span class="font-bold">dreamers, doers, and disruptors</span>
+        </p>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div class="bg-white/10 backdrop-blur-sm p-6 rounded-2xl">
+            <div class="text-4xl mb-4">🚀</div>
+            <h3 class="font-bold text-lg mb-2">First-time Founders</h3>
+            <p class="text-sm">With breakthrough ideas</p>
+          </div>
+          <div class="bg-white/10 backdrop-blur-sm p-6 rounded-2xl">
+            <div class="text-4xl mb-4">🌍</div>
+            <h3 class="font-bold text-lg mb-2">Seasoned Entrepreneurs</h3>
+            <p class="text-sm">Seeking to scale globally</p>
+          </div>
+          <div class="bg-white/10 backdrop-blur-sm p-6 rounded-2xl">
+            <div class="text-4xl mb-4">💼</div>
+            <h3 class="font-bold text-lg mb-2">Students & Professionals</h3>
+            <p class="text-sm">Exploring innovation</p>
+          </div>
+          <div class="bg-white/10 backdrop-blur-sm p-6 rounded-2xl">
+            <div class="text-4xl mb-4">💡</div>
+            <h3 class="font-bold text-lg mb-2">Innovators</h3>
+            <p class="text-sm">Looking to validate concepts</p>
+          </div>
+        </div>
+        <p class="text-lg mt-12 max-w-2xl mx-auto">
+          No matter where you are in your journey, SeedSite provides the right
+          <span class="font-semibold">platform, people, and path</span> to help
+          you succeed.
+        </p>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+            What Our Users Say
+          </h2>
+          <p class="text-xl text-gray-600">
+            Real stories from real entrepreneurs
+          </p>
+        </div>
+        <div class="grid lg:grid-cols-2 gap-8">
+          <div
+            class="testimonial-card bg-white p-8 rounded-2xl shadow-lg border border-gray-200"
+          >
+            <div class="flex mb-4">
+              <span class="text-yellow-400">⭐⭐⭐⭐⭐</span>
+            </div>
+            <p class="text-gray-700 text-lg mb-6 leading-relaxed">
+              "SeedSite gave me the roadmap to launch my idea. Within three
+              months, I had a team, a product, and our first pitch ready."
+            </p>
+            <div class="flex items-center">
+              <div
+                class="w-12 h-12 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full flex items-center justify-center text-white font-bold"
+              >
+                A
+              </div>
+              <div class="ml-4">
+                <div class="font-semibold text-gray-900">Alex M.</div>
+                <div class="text-gray-600 text-sm">Founder of TechFlow</div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="testimonial-card bg-white p-8 rounded-2xl shadow-lg border border-gray-200"
+          >
+            <div class="flex mb-4">
+              <span class="text-yellow-400">⭐⭐⭐⭐⭐</span>
+            </div>
+            <p class="text-gray-700 text-lg mb-6 leading-relaxed">
+              "The community is amazing. I found my co-founder here, and
+              together we turned an idea into a revenue-generating startup."
+            </p>
+            <div class="flex items-center">
+              <div
+                class="w-12 h-12 bg-gradient-to-r from-green-400 to-teal-500 rounded-full flex items-center justify-center text-white font-bold"
+              >
+                S
+              </div>
+              <div class="ml-4">
+                <div class="font-semibold text-gray-900">Sarah K.</div>
+                <div class="text-gray-600 text-sm">CEO of GreenHive</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+            Frequently Asked Questions
+          </h2>
+          <p class="text-xl text-gray-600">Everything you need to know</p>
+        </div>
+        <div class="space-y-6">
+          <div
+            class="faq-item bg-gray-50 rounded-xl p-6 cursor-pointer hover:bg-gray-100 transition-colors"
+            onclick="toggleFAQ(this)"
+          >
+            <div class="flex justify-between items-center">
+              <h3 class="text-lg font-semibold text-gray-900">
+                Who is SeedSite for?
+              </h3>
+              <span class="faq-icon text-2xl text-gray-500">+</span>
+            </div>
+            <div class="faq-answer mt-4 text-gray-600 hidden">
+              Entrepreneurs, innovators, and anyone with an idea who wants to
+              launch or grow a startup.
+            </div>
+          </div>
+          <div
+            class="faq-item bg-gray-50 rounded-xl p-6 cursor-pointer hover:bg-gray-100 transition-colors"
+            onclick="toggleFAQ(this)"
+          >
+            <div class="flex justify-between items-center">
+              <h3 class="text-lg font-semibold text-gray-900">
+                Do I need business experience?
+              </h3>
+              <span class="faq-icon text-2xl text-gray-500">+</span>
+            </div>
+            <div class="faq-answer mt-4 text-gray-600 hidden">
+              No—our platform guides you step by step with resources and
+              mentorship.
+            </div>
+          </div>
+          <div
+            class="faq-item bg-gray-50 rounded-xl p-6 cursor-pointer hover:bg-gray-100 transition-colors"
+            onclick="toggleFAQ(this)"
+          >
+            <div class="flex justify-between items-center">
+              <h3 class="text-lg font-semibold text-gray-900">
+                Can I find investors on SeedSite?
+              </h3>
+              <span class="faq-icon text-2xl text-gray-500">+</span>
+            </div>
+            <div class="faq-answer mt-4 text-gray-600 hidden">
+              Yes—our network includes angel investors, VCs, and accelerators.
+            </div>
+          </div>
+          <div
+            class="faq-item bg-gray-50 rounded-xl p-6 cursor-pointer hover:bg-gray-100 transition-colors"
+            onclick="toggleFAQ(this)"
+          >
+            <div class="flex justify-between items-center">
+              <h3 class="text-lg font-semibold text-gray-900">
+                Is it free to start?
+              </h3>
+              <span class="faq-icon text-2xl text-gray-500">+</span>
+            </div>
+            <div class="faq-answer mt-4 text-gray-600 hidden">
+              Yes, our Starter plan is free to help you kick off your journey.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-green-500 to-blue-600">
+      <div
+        class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8 text-white"
+      >
+        <h2 class="text-4xl lg:text-5xl font-bold mb-6">
+          Ready to Turn Your Idea Into Reality?
+        </h2>
+        <p class="text-xl mb-8 max-w-2xl mx-auto">
+          Thousands of founders are already building the future with SeedSite.
+          Don't wait—your startup journey begins today.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="https://www.linkedin.com/company/seedstart-world/"
+            class="px-8 py-4 border-2 border-white text-white rounded-xl font-semibold hover:bg-white hover:text-gray-900 transition-all text-lg"
+          >
+            Join the Community
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-4 gap-8 mb-8">
+          <div class="col-span-2">
+            <div class="flex items-center space-x-2 mb-4">
+              <div
+                class="w-8 h-8 bg-gradient-to-r from-green-400 to-blue-500 rounded-lg flex items-center justify-center"
+              >
+                <span class="text-white font-bold text-sm">🌱</span>
+              </div>
+              <span class="font-bold text-xl">SeedStart.World</span>
+            </div>
+            <p class="text-gray-400 mb-4 italic">
+              Where Ideas Grow Into Startups
+            </p>
+            <p class="text-gray-400">© 2025 SeedSite. All rights reserved.</p>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-4">Company</h4>
+            <ul class="space-y-2 text-gray-400">
+              <li>
+                <a href="#about" class="hover:text-white transition-colors"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a href="#features" class="hover:text-white transition-colors"
+                  >Features</a
+                >
+              </li>
+              <!-- <li><a href="#" class="hover:text-white transition-colors">Careers</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Contact</a></li> -->
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-4">Follow Us</h4>
+            <div class="flex space-x-4">
+              <a
+                href="https://x.com/seedstart_world"
+                class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-gray-700 transition-colors"
+              >
+                <span class="text-sm">𝕏</span>
+              </a>
+              <a
+                href="https://www.linkedin.com/company/seedstart-world/"
+                class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-gray-700 transition-colors"
+              >
+                <span class="text-sm">in</span>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-gray-700 transition-colors"
+              >
+                <span class="text-sm">f</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // find menu button / mobile menu with fallbacks (keeps your markup untouched)
+        const menuButton =
+          document.getElementById("mobile-menu-button") ||
+          document.querySelector("[data-mobile-menu-button]") ||
+          document.querySelector('button[aria-controls="mobile-menu"]') ||
+          document.querySelector(".mobile-menu-button");
+
+        const mobileMenu =
+          document.getElementById("mobile-menu") ||
+          document.querySelector("[data-mobile-menu]") ||
+          document.querySelector(".mobile-menu");
+
+        // 1) Smooth scrolling ONLY for real internal anchors (hash -> existing element)
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            const href = this.getAttribute("href");
+            if (!href || href === "#") return;
+            const target = document.querySelector(href);
+            if (target) {
+              e.preventDefault();
+              target.scrollIntoView({ behavior: "smooth" });
+              // close mobile menu if open
+              if (mobileMenu && !mobileMenu.classList.contains("hidden")) {
+                mobileMenu.classList.add("hidden");
+                if (menuButton)
+                  menuButton.setAttribute("aria-expanded", "false");
+              }
+            }
+          });
+        });
+
+        // 2) Navbar scroll effect (guarded)
+        const navbar = document.getElementById("navbar");
+        if (navbar) {
+          window.addEventListener("scroll", () => {
+            if (window.scrollY > 50) {
+              navbar.classList.add("bg-white/98");
+              navbar.classList.remove("bg-white/95");
+            } else {
+              navbar.classList.add("bg-white/95");
+              navbar.classList.remove("bg-white/98");
+            }
+          });
+        }
+
+        // 3) FAQ Toggle (exposed globally so existing calls still work)
+        window.toggleFAQ = function (element) {
+          const answer = element.querySelector(".faq-answer");
+          const icon = element.querySelector(".faq-icon");
+          if (!answer) return;
+          if (answer.classList.contains("hidden")) {
+            answer.classList.remove("hidden");
+            if (icon) icon.textContent = "−";
+          } else {
+            answer.classList.add("hidden");
+            if (icon) icon.textContent = "+";
+          }
+        };
+
+        // 4) Scroll reveal for feature cards (same behavior, guarded)
+        const observerOptions = {
+          threshold: 0.1,
+          rootMargin: "0px 0px -50px 0px",
+        };
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.style.opacity = "1";
+              entry.target.style.transform = "translateY(0)";
+            }
+          });
+        }, observerOptions);
+
+        document.querySelectorAll(".feature-card").forEach((card) => {
+          card.style.opacity = "0";
+          card.style.transform = "translateY(30px)";
+          card.style.transition = "all 0.6s ease";
+          observer.observe(card);
+        });
+
+        // 5) Mobile menu behavior: toggle, close on link, close on outside click, escape, resize
+        if (menuButton && mobileMenu) {
+          menuButton.addEventListener("click", (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            mobileMenu.classList.toggle("hidden");
+            const expanded =
+              menuButton.getAttribute("aria-expanded") === "true";
+            menuButton.setAttribute("aria-expanded", (!expanded).toString());
+          });
+
+          // If any <a> inside the mobile menu is clicked, close the menu.
+          // We don't prevent default — allowing external links (like Sign In) to navigate normally.
+          mobileMenu.addEventListener("click", (e) => {
+            const clickedAnchor = e.target.closest("a");
+            if (!clickedAnchor) return;
+            // small delay to avoid rare mobile browser issues where immediate DOM changes interfere with navigation
+            setTimeout(() => {
+              mobileMenu.classList.add("hidden");
+              menuButton.setAttribute("aria-expanded", "false");
+            }, 50);
+          });
+
+          // Click outside to close
+          document.addEventListener("click", (e) => {
+            if (
+              !mobileMenu.classList.contains("hidden") &&
+              !mobileMenu.contains(e.target) &&
+              !menuButton.contains(e.target)
+            ) {
+              mobileMenu.classList.add("hidden");
+              menuButton.setAttribute("aria-expanded", "false");
+            }
+          });
+
+          // Close on Escape
+          document.addEventListener("keydown", (e) => {
+            if (
+              e.key === "Escape" &&
+              !mobileMenu.classList.contains("hidden")
+            ) {
+              mobileMenu.classList.add("hidden");
+              menuButton.setAttribute("aria-expanded", "false");
+            }
+          });
+
+          // Close automatically when resizing to desktop
+          window.addEventListener("resize", () => {
+            if (
+              window.innerWidth >= 768 &&
+              !mobileMenu.classList.contains("hidden")
+            ) {
+              mobileMenu.classList.add("hidden");
+              menuButton.setAttribute("aria-expanded", "false");
+            }
+          });
+        } else {
+          // Helpful console hints if ids/classes differ from expected (won't break page)
+          if (!menuButton)
+            console.warn(
+              'Mobile menu button not found. Checked: #mobile-menu-button, [data-mobile-menu-button], button[aria-controls="mobile-menu"], .mobile-menu-button'
+            );
+          if (!mobileMenu)
+            console.warn(
+              "Mobile menu container not found. Checked: #mobile-menu, [data-mobile-menu], .mobile-menu"
+            );
+        }
+      });
+
+      // Scroll up button
+      const scrollBtn = document.getElementById("scroll-up-btn");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 400) {
+          scrollBtn.style.display = "block";
+        } else {
+          scrollBtn.style.display = "none";
+        }
+      });
+      scrollBtn.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    </script>
+  </body>
+</html>
