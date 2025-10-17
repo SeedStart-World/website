@@ -50,7 +50,6 @@ body {
   }
 }
 
-
 /* ========== HERO SECTION ========== */
 .hero-gradient {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -210,6 +209,7 @@ footer a:hover {
 
 #mobile-menu {
   padding: 20px;
+  margin: 20px;
   background-color: #1f2937;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   border-radius: 0.5rem;
