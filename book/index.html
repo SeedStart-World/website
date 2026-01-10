@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SeedStart - Book (Coming Soon)</title>
+  <title>SeedStart.Space - Zero-Capital Startup Framework (Book)</title>
   <link rel="icon" href="../assests/favicon.ico" type="image/x-icon" />
 
   <!-- Tailwind CSS -->
@@ -90,27 +90,105 @@
   </nav>
 
   <main class="pt-28 pb-20">
-    <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="bg-white border border-slate-100 rounded-3xl p-10 shadow-sm">
-        <div
-          class="inline-flex items-center gap-2 mb-4 px-4 py-1.5 rounded-full bg-slate-100 border border-slate-200 text-slate-600 text-xs font-semibold uppercase tracking-widest">
-          Book (in progress)
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <div
+            class="inline-flex items-center gap-2 mb-4 px-4 py-1.5 rounded-full bg-slate-100 border border-slate-200 text-slate-600 text-xs font-semibold uppercase tracking-widest">
+            Book
+          </div>
+          <h1 class="text-4xl lg:text-6xl font-extrabold text-slate-900 mb-6">
+            The Zero-Capital Startup Framework
+          </h1>
+          <p class="text-xl text-slate-600 mb-6">
+            A long-form guide to building a real startup from zero funding with part-time, volunteer teams — using
+            SeedStart as the operating platform.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="chapter-01.html"
+              class="px-7 py-3 bg-emerald-500 hover:bg-emerald-400 text-white rounded-xl font-semibold transition-all shadow-lg shadow-emerald-500/20">
+              Start Chapter 01
+            </a>
+            <a href="../methodology/index.html"
+              class="px-7 py-3 border border-slate-200 text-slate-700 rounded-xl font-semibold hover:border-emerald-200 hover:text-emerald-600 transition-all">
+              Jump to the Methodology
+            </a>
+          </div>
+          <p class="text-sm text-slate-500 mt-5">
+            The Methodology pages are the “Scrum handbook” (rules, roles, rituals, checklists). This Book is the story,
+            context, and examples behind those rules.
+          </p>
         </div>
-        <h1 class="text-4xl lg:text-5xl font-bold text-slate-900 mb-4">Long-form book pages</h1>
-        <p class="text-slate-600 mb-6">
-          This section is reserved for a narrative, chapter-based book about the Zero-Capital Startup Framework. For now,
-          use the Methodology pages for the actionable guidelines and checklists.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4">
-          <a href="../methodology/index.html"
-            class="px-7 py-3 bg-emerald-500 hover:bg-emerald-400 text-white rounded-xl font-semibold transition-all shadow-lg shadow-emerald-500/20">
-            Open the Methodology
-          </a>
-          <a href="../index.html#methodology"
-            class="px-7 py-3 border border-slate-200 text-slate-700 rounded-xl font-semibold hover:border-emerald-200 hover:text-emerald-600 transition-all">
-            Back to landing page
+
+        <div class="bg-slate-900 text-white rounded-3xl p-8 shadow-2xl border border-white/10">
+          <div class="text-xs uppercase tracking-widest text-emerald-300 mb-3">How to read</div>
+          <h2 class="text-2xl font-bold mb-4">Use both formats</h2>
+          <ul class="space-y-3 text-slate-200">
+            <li class="flex items-start gap-3">
+              <span class="material-icons text-emerald-300 text-base">menu_book</span>
+              <span><strong>Book</strong>: read a chapter, then turn it into actions.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="material-icons text-emerald-300 text-base">checklist</span>
+              <span><strong>Methodology</strong>: apply the checklists to your weekly sprints.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="material-icons text-emerald-300 text-base">apps</span>
+              <span><strong>SeedStart app</strong>: track work, recognize contributors, and keep rituals visible.</span>
+            </li>
+          </ul>
+          <a target="_blank" href="https://app.seedstart.space/"
+            class="mt-6 inline-flex items-center gap-2 text-emerald-300 font-semibold hover:text-emerald-200">
+            Open SeedStart
+            <span class="material-icons text-base">arrow_forward</span>
           </a>
         </div>
+      </div>
+    </section>
+
+    <section id="toc" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-20">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl lg:text-4xl font-bold text-slate-900">Table of contents</h2>
+        <p class="text-slate-600 mt-2">Draft chapters — we’ll expand and refine them as you iterate.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <a href="chapter-01.html"
+          class="group p-6 bg-white border border-slate-100 rounded-2xl shadow-sm hover:shadow-xl transition-all">
+          <div class="text-xs uppercase tracking-widest text-slate-500">Chapter 01</div>
+          <h3 class="text-xl font-bold text-slate-900 mt-2 group-hover:text-emerald-600">The promise</h3>
+          <p class="text-sm text-slate-600 mt-2">What “zero-capital” really means and what outcomes to expect.</p>
+        </a>
+        <a href="chapter-02.html"
+          class="group p-6 bg-white border border-slate-100 rounded-2xl shadow-sm hover:shadow-xl transition-all">
+          <div class="text-xs uppercase tracking-widest text-slate-500">Chapter 02</div>
+          <h3 class="text-xl font-bold text-slate-900 mt-2 group-hover:text-emerald-600">SCRUM for lean startups</h3>
+          <p class="text-sm text-slate-600 mt-2">Why the framework is a methodology, not a motivational blog post.</p>
+        </a>
+        <a href="chapter-03.html"
+          class="group p-6 bg-white border border-slate-100 rounded-2xl shadow-sm hover:shadow-xl transition-all">
+          <div class="text-xs uppercase tracking-widest text-slate-500">Chapter 03</div>
+          <h3 class="text-xl font-bold text-slate-900 mt-2 group-hover:text-emerald-600">Teams win</h3>
+          <p class="text-sm text-slate-600 mt-2">Why teams matter, why investors care, and what “team signal” is.</p>
+        </a>
+        <a href="chapter-04.html"
+          class="group p-6 bg-white border border-slate-100 rounded-2xl shadow-sm hover:shadow-xl transition-all">
+          <div class="text-xs uppercase tracking-widest text-slate-500">Chapter 04</div>
+          <h3 class="text-xl font-bold text-slate-900 mt-2 group-hover:text-emerald-600">Volunteers and incentives</h3>
+          <p class="text-sm text-slate-600 mt-2">How to recruit, retain, and respect volunteer contributors.</p>
+        </a>
+        <a href="chapter-05.html"
+          class="group p-6 bg-white border border-slate-100 rounded-2xl shadow-sm hover:shadow-xl transition-all">
+          <div class="text-xs uppercase tracking-widest text-slate-500">Chapter 05</div>
+          <h3 class="text-xl font-bold text-slate-900 mt-2 group-hover:text-emerald-600">The 5–6 month journey</h3>
+          <p class="text-sm text-slate-600 mt-2">A narrative walkthrough of the phases from setup to launch.</p>
+        </a>
+        <a href="../methodology/index.html"
+          class="group p-6 bg-slate-900 text-white border border-white/10 rounded-2xl shadow-sm hover:shadow-xl transition-all">
+          <div class="text-xs uppercase tracking-widest text-emerald-300">Shortcut</div>
+          <h3 class="text-xl font-bold mt-2 group-hover:text-emerald-200">Need checklists now?</h3>
+          <p class="text-sm text-slate-200 mt-2">Open the Methodology and run this week’s sprint.</p>
+        </a>
       </div>
     </section>
   </main>
