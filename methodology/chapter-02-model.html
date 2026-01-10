@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SeedStart Methodology - Chapter 02</title>
+  <link rel="icon" href="../assests/favicon.ico" type="image/x-icon" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            "seed-primary": "#10B981",
+            "seed-secondary": "#3B82F6",
+            "seed-dark": "#0F172A",
+            "seed-light": "#F8FAFC",
+          },
+        },
+      },
+    };
+  </script>
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+
+<body class="bg-seed-light text-slate-800 antialiased selection:bg-seed-primary selection:text-white">
+  <nav class="fixed w-full top-0 z-50 transition-all duration-300" id="navbar">
+    <div class="absolute inset-0 bg-white/80 backdrop-blur-md shadow-sm border-b border-white/20"></div>
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div class="flex justify-between items-center py-4">
+        <a href="../index.html" class="flex items-center space-x-2 group">
+          <div
+            class="relative w-10 h-10 flex items-center justify-center bg-gradient-to-br from-seed-primary to-seed-secondary rounded-xl shadow-lg transform group-hover:scale-105 transition-transform duration-300">
+            <span class="text-white font-bold text-xl">S</span>
+          </div>
+          <span class="font-bold text-xl text-slate-900 tracking-tight">SeedStart</span>
+        </a>
+
+        <div class="hidden md:flex space-x-8 items-center">
+          <a href="../index.html#features"
+            class="text-slate-600 font-medium hover:text-seed-primary transition-colors">Platform</a>
+          <a href="index.html" class="text-slate-600 font-medium hover:text-seed-primary transition-colors">Methodology
+            Book</a>
+          <a href="index.html#toc" class="text-slate-600 font-medium hover:text-seed-primary transition-colors">Chapters</a>
+          <a target="_blank" href="https://app.seedstart.space/"
+            class="text-slate-600 font-medium hover:text-seed-primary transition-colors">Use Platform</a>
+        </div>
+
+        <div class="hidden md:flex space-x-4 items-center">
+          <a href="../index.html"
+            class="text-slate-700 font-medium hover:text-seed-primary transition-colors">Home</a>
+          <a target="_blank" href="https://app.seedstart.space/"
+            class="px-5 py-2.5 bg-gradient-to-r from-seed-primary to-emerald-400 text-white rounded-xl font-semibold hover:shadow-lg hover:shadow-emerald-500/30 transition-all transform hover:-translate-y-0.5">
+            Open App
+          </a>
+        </div>
+
+        <div class="md:hidden flex items-center">
+          <button id="mobile-menu-button"
+            class="p-2 rounded-lg hover:bg-slate-100 transition-colors focus:outline-none">
+            <svg class="w-6 h-6 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="mobile-menu"
+      class="hidden md:hidden absolute w-full bg-white/95 backdrop-blur-xl border-b border-gray-100 shadow-xl">
+      <div class="px-4 py-6 space-y-4">
+        <a href="../index.html#features" class="block text-lg font-medium text-slate-700 hover:text-seed-primary">Platform</a>
+        <a href="index.html" class="block text-lg font-medium text-slate-700 hover:text-seed-primary">Methodology Book</a>
+        <a href="index.html#toc" class="block text-lg font-medium text-slate-700 hover:text-seed-primary">Chapters</a>
+        <a target="_blank" href="https://app.seedstart.space/"
+          class="block text-lg font-medium text-slate-700 hover:text-seed-primary">Use Platform</a>
+        <div class="pt-4 flex flex-col space-y-3">
+          <a href="../index.html"
+            class="w-full text-center py-3 text-slate-700 font-semibold border border-slate-200 rounded-xl hover:bg-slate-50">Home</a>
+          <a target="_blank" href="https://app.seedstart.space/"
+            class="w-full text-center py-3 bg-seed-primary text-white font-bold rounded-xl shadow-lg shadow-emerald-500/20">Open App</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="pt-24 pb-16">
+    <section class="bg-white border-b border-slate-100">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="text-xs uppercase tracking-widest text-emerald-600 font-semibold">Chapter 02</div>
+        <h1 class="text-4xl lg:text-5xl font-bold text-slate-900 mt-3 mb-4">The founder led, coach guided model</h1>
+        <p class="text-lg text-slate-600 max-w-3xl">This chapter explains how founders, coaches, and volunteers work
+          together to build a real product without upfront funding.</p>
+      </div>
+    </section>
+
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid lg:grid-cols-3 gap-10">
+        <div class="lg:col-span-2 space-y-10">
+          <div>
+            <h2 class="text-2xl font-bold text-slate-900 mb-4">Core principles</h2>
+            <ul class="space-y-3 text-slate-600">
+              <li class="flex gap-3">
+                <span class="material-icons text-emerald-500 text-base">check_circle</span>
+                <span>Volunteers contribute real skills as team members, not interns.</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="material-icons text-emerald-500 text-base">check_circle</span>
+                <span>Founder provides vision and leadership; coach structures the process.</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="material-icons text-emerald-500 text-base">check_circle</span>
+                <span>Work happens on a real product with an MVP in production as the goal.</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="material-icons text-emerald-500 text-base">check_circle</span>
+                <span>Daily or regular meetings create accountability and momentum.</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="material-icons text-emerald-500 text-base">check_circle</span>
+                <span>Outcome: a functioning MVP, team in place, and proof for investors.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h2 class="text-2xl font-bold text-slate-900 mb-4">How it works</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+              <div class="bg-white border border-slate-100 rounded-2xl p-6 shadow-sm">
+                <div class="text-sm uppercase tracking-widest text-slate-500">Founder</div>
+                <h3 class="font-semibold text-slate-900 mt-2">Vision and leadership</h3>
+                <p class="text-sm text-slate-600 mt-2">Sets the direction, prioritizes features, and makes decisions.</p>
+              </div>
+              <div class="bg-white border border-slate-100 rounded-2xl p-6 shadow-sm">
+                <div class="text-sm uppercase tracking-widest text-slate-500">Coach</div>
+                <h3 class="font-semibold text-slate-900 mt-2">Process and tools</h3>
+                <p class="text-sm text-slate-600 mt-2">Creates rhythm, tracks progress, and removes blockers.</p>
+              </div>
+              <div class="bg-white border border-slate-100 rounded-2xl p-6 shadow-sm">
+                <div class="text-sm uppercase tracking-widest text-slate-500">Volunteers</div>
+                <h3 class="font-semibold text-slate-900 mt-2">Execution</h3>
+                <p class="text-sm text-slate-600 mt-2">Build, design, test, and deliver the MVP in production.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-slate-900 text-white rounded-3xl p-8">
+            <h2 class="text-2xl font-bold mb-3">Operating rhythm</h2>
+            <p class="text-slate-200">The model works when the team follows a predictable cadence: short standups, visible
+              tasks, and weekly demos. Use SeedStart to keep this rhythm transparent for everyone.</p>
+          </div>
+        </div>
+
+        <aside class="space-y-6">
+          <div class="bg-white border border-slate-100 rounded-2xl p-6 shadow-sm">
+            <h3 class="font-bold text-slate-900 mb-3">Your responsibilities</h3>
+            <ul class="space-y-2 text-sm text-slate-600">
+              <li>Founder: vision, scope, and product decisions.</li>
+              <li>Coach: rituals, onboarding, and delivery flow.</li>
+              <li>Volunteers: execution, collaboration, and feedback.</li>
+            </ul>
+          </div>
+          <div class="bg-white border border-slate-100 rounded-2xl p-6 shadow-sm">
+            <h3 class="font-bold text-slate-900 mb-3">Next chapter</h3>
+            <p class="text-sm text-slate-600 mb-4">Learn why teams matter more than solo effort.</p>
+            <a href="chapter-03-why-teams.html"
+              class="inline-flex items-center gap-2 text-emerald-600 font-semibold hover:text-emerald-500">
+              Chapter 03: Why teams matter
+              <span class="material-icons text-base">arrow_forward</span>
+            </a>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-10">
+      <div class="flex flex-col sm:flex-row justify-between gap-4">
+        <a href="chapter-01-introduction.html" class="text-slate-600 font-medium hover:text-emerald-600">Previous chapter</a>
+        <a href="chapter-03-why-teams.html"
+          class="px-6 py-3 bg-emerald-500 hover:bg-emerald-400 text-white rounded-xl font-semibold transition-all">
+          Next: Why teams matter
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-gray-900 text-white py-10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+        <div class="text-gray-400">SeedStart Methodology Book</div>
+        <div class="flex gap-4 text-sm text-gray-400">
+          <a href="index.html" class="hover:text-white">Book index</a>
+          <a href="chapter-03-why-teams.html" class="hover:text-white">Next chapter</a>
+          <a href="../index.html" class="hover:text-white">Landing page</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/script.js"></script>
+</body>
+
+</html>

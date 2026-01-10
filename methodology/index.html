@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SeedStart Methodology Book</title>
+  <link rel="icon" href="../assests/favicon.ico" type="image/x-icon" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            "seed-primary": "#10B981",
+            "seed-secondary": "#3B82F6",
+            "seed-dark": "#0F172A",
+            "seed-light": "#F8FAFC",
+          },
+          animation: {
+            "pulse-slow": "pulse 6s ease-in-out infinite",
+          },
+        },
+      },
+    };
+  </script>
+
+  <!-- Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+
+<body class="bg-seed-light text-slate-800 antialiased selection:bg-seed-primary selection:text-white">
+  <!-- Navigation -->
+  <nav class="fixed w-full top-0 z-50 transition-all duration-300" id="navbar">
+    <div class="absolute inset-0 bg-white/80 backdrop-blur-md shadow-sm border-b border-white/20"></div>
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div class="flex justify-between items-center py-4">
+        <!-- Logo -->
+        <a href="../index.html" class="flex items-center space-x-2 group">
+          <div
+            class="relative w-10 h-10 flex items-center justify-center bg-gradient-to-br from-seed-primary to-seed-secondary rounded-xl shadow-lg transform group-hover:scale-105 transition-transform duration-300">
+            <span class="text-white font-bold text-xl">S</span>
+          </div>
+          <span class="font-bold text-xl text-slate-900 tracking-tight">SeedStart</span>
+        </a>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex space-x-8 items-center">
+          <a href="../index.html#features"
+            class="text-slate-600 font-medium hover:text-seed-primary transition-colors">Platform</a>
+          <a href="index.html" class="text-slate-600 font-medium hover:text-seed-primary transition-colors">Methodology
+            Book</a>
+          <a href="index.html#toc" class="text-slate-600 font-medium hover:text-seed-primary transition-colors">Chapters</a>
+          <a target="_blank" href="https://app.seedstart.space/"
+            class="text-slate-600 font-medium hover:text-seed-primary transition-colors">Use Platform</a>
+        </div>
+
+        <!-- Desktop Buttons -->
+        <div class="hidden md:flex space-x-4 items-center">
+          <a href="../index.html"
+            class="text-slate-700 font-medium hover:text-seed-primary transition-colors">Home</a>
+          <a target="_blank" href="https://app.seedstart.space/"
+            class="px-5 py-2.5 bg-gradient-to-r from-seed-primary to-emerald-400 text-white rounded-xl font-semibold hover:shadow-lg hover:shadow-emerald-500/30 transition-all transform hover:-translate-y-0.5">
+            Open App
+          </a>
+        </div>
+
+        <!-- Mobile Hamburger -->
+        <div class="md:hidden flex items-center">
+          <button id="mobile-menu-button"
+            class="p-2 rounded-lg hover:bg-slate-100 transition-colors focus:outline-none">
+            <svg class="w-6 h-6 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu"
+      class="hidden md:hidden absolute w-full bg-white/95 backdrop-blur-xl border-b border-gray-100 shadow-xl">
+      <div class="px-4 py-6 space-y-4">
+        <a href="../index.html#features" class="block text-lg font-medium text-slate-700 hover:text-seed-primary">Platform</a>
+        <a href="index.html" class="block text-lg font-medium text-slate-700 hover:text-seed-primary">Methodology Book</a>
+        <a href="index.html#toc" class="block text-lg font-medium text-slate-700 hover:text-seed-primary">Chapters</a>
+        <a target="_blank" href="https://app.seedstart.space/"
+          class="block text-lg font-medium text-slate-700 hover:text-seed-primary">Use Platform</a>
+        <div class="pt-4 flex flex-col space-y-3">
+          <a href="../index.html"
+            class="w-full text-center py-3 text-slate-700 font-semibold border border-slate-200 rounded-xl hover:bg-slate-50">Home</a>
+          <a target="_blank" href="https://app.seedstart.space/"
+            class="w-full text-center py-3 bg-seed-primary text-white font-bold rounded-xl shadow-lg shadow-emerald-500/20">Open App</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="pt-28 pb-20">
+    <!-- Hero -->
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <div
+            class="inline-flex items-center gap-2 mb-4 px-4 py-1.5 rounded-full bg-slate-100 border border-slate-200 text-slate-600 text-xs font-semibold uppercase tracking-widest">
+            Methodology Book
+          </div>
+          <h1 class="text-4xl lg:text-6xl font-extrabold text-slate-900 mb-6">
+            Let us get your startup started
+          </h1>
+          <p class="text-xl text-slate-600 mb-6">
+            No funding. Real business. A step by step journey from idea or prototype to MVP in production.
+          </p>
+          <p class="text-sm text-slate-500 mb-8">
+            Startup Launch with Startup Coach - Serge Ivo. Copyright 2025.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="chapter-01-introduction.html"
+              class="px-7 py-3 bg-emerald-500 hover:bg-emerald-400 text-white rounded-xl font-semibold transition-all shadow-lg shadow-emerald-500/20">
+              Start Chapter 1
+            </a>
+            <a target="_blank" href="https://app.seedstart.space/"
+              class="px-7 py-3 border border-slate-200 text-slate-700 rounded-xl font-semibold hover:border-emerald-200 hover:text-emerald-600 transition-all">
+              Use the Platform
+            </a>
+          </div>
+        </div>
+        <div class="bg-white rounded-3xl shadow-xl border border-slate-100 p-8">
+          <div class="text-xs uppercase tracking-widest text-emerald-600 font-semibold mb-2">The promise</div>
+          <h2 class="text-2xl font-bold text-slate-900 mb-4">From one laptop to a production MVP</h2>
+          <ul class="space-y-3 text-slate-600">
+            <li class="flex gap-3">
+              <span class="material-icons text-emerald-500 text-base">check_circle</span>
+              <span>Volunteer team across dev, design, QA, and delivery.</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="material-icons text-emerald-500 text-base">check_circle</span>
+              <span>Founder led, coach guided structure with weekly rituals.</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="material-icons text-emerald-500 text-base">check_circle</span>
+              <span>Daily or regular standups that create momentum.</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="material-icons text-emerald-500 text-base">check_circle</span>
+              <span>Outcome: MVP in production with first users onboarded.</span>
+            </li>
+          </ul>
+          <div class="mt-6 p-4 rounded-2xl bg-slate-50 text-sm text-slate-600">
+            Estimated journey: 5 to 6 months<br />Founder: 3 to 10 hrs/wk | Coach: 1 to 10 hrs/wk
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Who this is for -->
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-16">
+      <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
+        <div>
+          <h2 class="text-3xl font-bold text-slate-900">Who this book is for</h2>
+          <p class="text-slate-600 mt-2 max-w-2xl">Founders who want a practical, no fluff path to launch.</p>
+        </div>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6 mt-8">
+        <div class="bg-white border border-slate-100 rounded-2xl p-6 shadow-sm">
+          <div class="text-sm font-semibold text-emerald-600 mb-2">Prototype to team</div>
+          <p class="text-slate-600 text-sm">You already built a prototype and want to grow from one laptop to a team with
+            an MVP in production.</p>
+        </div>
+        <div class="bg-white border border-slate-100 rounded-2xl p-6 shadow-sm">
+          <div class="text-sm font-semibold text-emerald-600 mb-2">Non technical founder</div>
+          <p class="text-slate-600 text-sm">You want to do a startup, but have no technical skills and need a structured
+            way to start.</p>
+        </div>
+        <div class="bg-white border border-slate-100 rounded-2xl p-6 shadow-sm">
+          <div class="text-sm font-semibold text-emerald-600 mb-2">Early idea validation</div>
+          <p class="text-slate-600 text-sm">You have an early stage idea and want to validate it quickly before committing
+            resources.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- What you gain + platform alignment -->
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-16">
+      <div class="grid lg:grid-cols-2 gap-10">
+        <div class="bg-white border border-slate-100 rounded-3xl p-8 shadow-sm">
+          <h3 class="text-2xl font-bold text-slate-900 mb-4">What you gain</h3>
+          <ul class="space-y-3 text-slate-600">
+            <li class="flex gap-3">
+              <span class="material-icons text-emerald-500 text-base">check_circle</span>
+              <span>A clear step by step roadmap from idea to MVP in production.</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="material-icons text-emerald-500 text-base">check_circle</span>
+              <span>Real team structure with devs, UI/UX, QA, and Scrum Masters.</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="material-icons text-emerald-500 text-base">check_circle</span>
+              <span>Daily accountability and coaching support for momentum.</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="material-icons text-emerald-500 text-base">check_circle</span>
+              <span>A working MVP in production with first users onboarded.</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="material-icons text-emerald-500 text-base">check_circle</span>
+              <span>Confidence to run and grow the team after coaching ends.</span>
+            </li>
+          </ul>
+        </div>
+        <div class="bg-slate-900 text-white rounded-3xl p-8 shadow-xl">
+          <h3 class="text-2xl font-bold mb-4">Platform + methodology</h3>
+          <p class="text-slate-200 mb-6">SeedStart is the operating system that supports this workflow. The platform
+            helps you keep volunteers aligned, document progress, and ship faster.</p>
+          <ul class="space-y-3 text-slate-200">
+            <li class="flex gap-3">
+              <span class="material-icons text-emerald-300 text-base">check_circle</span>
+              <span>Create your startup workspace and pitch deck in minutes.</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="material-icons text-emerald-300 text-base">check_circle</span>
+              <span>Advertise volunteer roles and track applicants.</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="material-icons text-emerald-300 text-base">check_circle</span>
+              <span>Run sprints, recognize contributors, and keep rituals visible.</span>
+            </li>
+          </ul>
+          <a target="_blank" href="https://app.seedstart.space/"
+            class="mt-6 inline-flex items-center gap-2 text-emerald-300 font-semibold hover:text-emerald-200">
+            Open SeedStart
+            <span class="material-icons text-base">arrow_forward</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Table of contents -->
+    <section id="toc" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-20">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl lg:text-4xl font-bold text-slate-900">Table of contents</h2>
+        <p class="text-slate-600 mt-2">Nine chapters that take you from idea to launch.</p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <a href="chapter-01-introduction.html"
+          class="group p-6 bg-white border border-slate-100 rounded-2xl shadow-sm hover:shadow-xl transition-all">
+          <div class="text-xs uppercase tracking-widest text-slate-500">Chapter 01</div>
+          <h3 class="text-xl font-bold text-slate-900 mt-2 group-hover:text-emerald-600">Introduction and outcomes</h3>
+          <p class="text-sm text-slate-600 mt-2">Who this journey is for and what you gain.</p>
+        </a>
+        <a href="chapter-02-model.html"
+          class="group p-6 bg-white border border-slate-100 rounded-2xl shadow-sm hover:shadow-xl transition-all">
+          <div class="text-xs uppercase tracking-widest text-slate-500">Chapter 02</div>
+          <h3 class="text-xl font-bold text-slate-900 mt-2 group-hover:text-emerald-600">The founder led model</h3>
+          <p class="text-sm text-slate-600 mt-2">How the coach, founder, and volunteers work together.</p>
+        </a>
+        <a href="chapter-03-why-teams.html"
+          class="group p-6 bg-white border border-slate-100 rounded-2xl shadow-sm hover:shadow-xl transition-all">
+          <div class="text-xs uppercase tracking-widest text-slate-500">Chapter 03</div>
+          <h3 class="text-xl font-bold text-slate-900 mt-2 group-hover:text-emerald-600">Why teams matter</h3>
+          <p class="text-sm text-slate-600 mt-2">Startups are built by teams, not solo heroes.</p>
+        </a>
+        <a href="chapter-04-why-volunteers.html"
+          class="group p-6 bg-white border border-slate-100 rounded-2xl shadow-sm hover:shadow-xl transition-all">
+          <div class="text-xs uppercase tracking-widest text-slate-500">Chapter 04</div>
+          <h3 class="text-xl font-bold text-slate-900 mt-2 group-hover:text-emerald-600">Why volunteers work</h3>
+          <p class="text-sm text-slate-600 mt-2">Motivation, loyalty, and leverage without funding.</p>
+        </a>
+        <a href="chapter-05-roadmap.html"
+          class="group p-6 bg-white border border-slate-100 rounded-2xl shadow-sm hover:shadow-xl transition-all">
+          <div class="text-xs uppercase tracking-widest text-slate-500">Chapter 05</div>
+          <h3 class="text-xl font-bold text-slate-900 mt-2 group-hover:text-emerald-600">Roadmap overview</h3>
+          <p class="text-sm text-slate-600 mt-2">Timeline, phases, and time commitments.</p>
+        </a>
+        <a href="chapter-06-phases.html"
+          class="group p-6 bg-white border border-slate-100 rounded-2xl shadow-sm hover:shadow-xl transition-all">
+          <div class="text-xs uppercase tracking-widest text-slate-500">Chapter 06</div>
+          <h3 class="text-xl font-bold text-slate-900 mt-2 group-hover:text-emerald-600">Phase playbooks</h3>
+          <p class="text-sm text-slate-600 mt-2">Goals, actions, and outcomes for every phase.</p>
+        </a>
+        <a href="chapter-07-founder-essentials.html"
+          class="group p-6 bg-white border border-slate-100 rounded-2xl shadow-sm hover:shadow-xl transition-all">
+          <div class="text-xs uppercase tracking-widest text-slate-500">Chapter 07</div>
+          <h3 class="text-xl font-bold text-slate-900 mt-2 group-hover:text-emerald-600">Founder essentials</h3>
+          <p class="text-sm text-slate-600 mt-2">Idea selection, pitch, and leadership habits.</p>
+        </a>
+        <a href="chapter-08-risks.html"
+          class="group p-6 bg-white border border-slate-100 rounded-2xl shadow-sm hover:shadow-xl transition-all">
+          <div class="text-xs uppercase tracking-widest text-slate-500">Chapter 08</div>
+          <h3 class="text-xl font-bold text-slate-900 mt-2 group-hover:text-emerald-600">Risks and constraints</h3>
+          <p class="text-sm text-slate-600 mt-2">What can break momentum and how to respond.</p>
+        </a>
+        <a href="chapter-09-team-hiring-tools.html"
+          class="group p-6 bg-white border border-slate-100 rounded-2xl shadow-sm hover:shadow-xl transition-all">
+          <div class="text-xs uppercase tracking-widest text-slate-500">Chapter 09</div>
+          <h3 class="text-xl font-bold text-slate-900 mt-2 group-hover:text-emerald-600">Team, hiring, tools, support</h3>
+          <p class="text-sm text-slate-600 mt-2">Structure, incentives, tools, and communities.</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- How to use the book -->
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-20">
+      <div class="bg-slate-900 text-white rounded-3xl p-10">
+        <div class="max-w-3xl">
+          <h2 class="text-3xl font-bold mb-4">How to use this book</h2>
+          <p class="text-slate-200">Read each chapter in order, then translate the guidance into concrete weekly tasks in
+            SeedStart.</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6 mt-8">
+          <div class="bg-white/10 border border-white/10 rounded-2xl p-6">
+            <div class="text-sm uppercase tracking-widest text-emerald-300">Step 1</div>
+            <h3 class="text-xl font-bold mt-2">Align on the model</h3>
+            <p class="text-slate-200 text-sm mt-2">Make sure the founder, coach, and volunteers share the same expectation
+              about outcomes.</p>
+          </div>
+          <div class="bg-white/10 border border-white/10 rounded-2xl p-6">
+            <div class="text-sm uppercase tracking-widest text-emerald-300">Step 2</div>
+            <h3 class="text-xl font-bold mt-2">Run the phases</h3>
+            <p class="text-slate-200 text-sm mt-2">Work through the roadmap and deliver each phase output before moving on.</p>
+          </div>
+          <div class="bg-white/10 border border-white/10 rounded-2xl p-6">
+            <div class="text-sm uppercase tracking-widest text-emerald-300">Step 3</div>
+            <h3 class="text-xl font-bold mt-2">Document everything</h3>
+            <p class="text-slate-200 text-sm mt-2">Use the platform to track decisions, wins, and momentum for investors.</p>
+          </div>
+        </div>
+        <div class="mt-10 flex flex-col sm:flex-row gap-4">
+          <a href="chapter-01-introduction.html"
+            class="px-7 py-3 bg-emerald-500 hover:bg-emerald-400 text-white rounded-xl font-semibold transition-all shadow-lg shadow-emerald-500/20">
+            Start the journey
+          </a>
+          <a href="../index.html#methodology"
+            class="px-7 py-3 border border-white/20 text-white rounded-xl font-semibold hover:border-white/40 transition-all">
+            Back to landing page
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-12">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-3 gap-8">
+        <div>
+          <div class="flex items-center space-x-2 mb-4">
+            <div
+              class="w-10 h-10 bg-gradient-to-br from-seed-primary to-seed-secondary rounded-xl flex items-center justify-center">
+              <span class="text-white font-bold">S</span>
+            </div>
+            <span class="font-bold text-xl">SeedStart</span>
+          </div>
+          <p class="text-gray-400 mb-4 italic">Where ideas grow into startups</p>
+          <p class="text-gray-400 text-sm">Startup Launch Methodology by Serge Ivo, 2025.</p>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">Methodology</h4>
+          <ul class="space-y-2 text-gray-400">
+            <li><a href="index.html" class="hover:text-white transition-colors">Book index</a></li>
+            <li><a href="index.html#toc" class="hover:text-white transition-colors">Table of contents</a></li>
+            <li><a href="chapter-01-introduction.html" class="hover:text-white transition-colors">Start reading</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">Platform</h4>
+          <ul class="space-y-2 text-gray-400">
+            <li><a href="../index.html" class="hover:text-white transition-colors">Landing page</a></li>
+            <li><a href="../index.html#features" class="hover:text-white transition-colors">Platform features</a></li>
+            <li><a target="_blank" href="https://app.seedstart.space/" class="hover:text-white transition-colors">Open the
+                app</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script src="../js/script.js"></script>
+</body>
+
+</html>
